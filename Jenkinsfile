@@ -1,7 +1,9 @@
 pipeline {
 	agent any
 	stages {
+                sh '''
 		stage('build') {
+
 		       	steps {
 				sh 'mvn -B -DskipTes clean package' 
 
@@ -25,6 +27,7 @@ pipeline {
 			sh './scripts/deliver.sh'
 			}
 		}
+         '''
 	}
 }
 
