@@ -14,8 +14,14 @@ pipeline {
                  always {
 		   junit 'target/surefire-reports/*.xml'
 			}
+			
 		} 	
 	}
+	     stage('Deliver') {
+		steps {
+		 sh '.sh/scripts/deliver.sh'
+			}
+		}
 
 }
 }
