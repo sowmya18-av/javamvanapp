@@ -3,11 +3,7 @@ pipeline {
 	  stages {
 	     stage ('Build') {
 	        steps {
-		  sh 'echo test'
-			sh '''
-			echo "multi line"
-			ls -lart
-			'''
+			sh 'mvn -B -DskipTests clean package '
 			}
 		}
 	}
