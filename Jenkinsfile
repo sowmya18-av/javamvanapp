@@ -1,4 +1,4 @@
-pipeline {
+pipeline {		
 	agent any
 	  stages {
 	     stage ('Build') {
@@ -15,7 +15,8 @@ pipeline {
 		   junit 'target/surefire-reports/*.xml'
 			}
 			
-		} 	
+		} 
+		}
 
 		stage('Deliver') {
             steps {
@@ -23,5 +24,5 @@ pipeline {
             }
 }
 		}
-}
+
 }
